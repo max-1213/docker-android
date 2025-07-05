@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: docker-android
-    env: docker
-    plan: free
-    region: oregon
-    dockerfilePath: docker/Dockerfile
-    autoDeploy: true
