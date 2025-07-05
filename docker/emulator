@@ -1,11 +1,11 @@
-ARG DOCKER_ANDROID_VERSION
+ARG DOCKER_ANDROID_VERSION=11.0
 FROM budtmo/docker-android:base_${DOCKER_ANDROID_VERSION}
 
 #==================
 # Android Packages
 #==================
-ARG EMULATOR_ANDROID_VERSION
-ARG EMULATOR_API_LEVEL
+ARG EMULATOR_ANDROID_VERSION=11.0
+ARG EMULATOR_API_LEVEL=30
 ENV EMULATOR_ANDROID_VERSION=${EMULATOR_ANDROID_VERSION} \
     EMULATOR_API_LEVEL=${EMULATOR_API_LEVEL} \
     EMULATOR_SYS_IMG=x86_64 \
@@ -19,22 +19,7 @@ RUN yes | sdkmanager --licenses \
 
 #=============
 # UI Packages
-#-------------
-# ffmpeg
-#   Video recorder
-# feh
-#   Screen background
-# libxcomposite-dev
-#   Window System for Emulator
-# menu
-#   Debian menu
-# openbox
-#   Windows manager
-# x11vnc
-#   VNC server
-# xterm
-#   Terminal emulator
-#==================
+#=============
 RUN apt-get -qqy update && apt-get -qqy install --no-install-recommends \
     ffmpeg \
     feh \
