@@ -4,5 +4,5 @@ services:
     env: docker
     plan: free
     region: oregon
-    dockerfilePath: docker/Dockerfile
+    dockerfilePath: docker/emulator/Dockerfile
     autoDeploy: true
