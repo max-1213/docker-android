@@ -4,10 +4,6 @@ services:
     env: docker
     plan: free
     region: oregon
-    dockerfilePath: docker/emulator/Dockerfile
-    buildCommand: ""
-    startCommand: ""
+    dockerfilePath: docker/emulator
+    dockerContext: .
     autoDeploy: true
-    envVars:
-      - key: WEB_VNC
-        value: "true"
